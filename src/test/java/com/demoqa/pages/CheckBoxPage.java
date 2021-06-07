@@ -20,7 +20,7 @@ public class CheckBoxPage extends PageObject {
     private WebElementFacade checkBoxReact;
     @FindBy(css = "#result > span.text-success")
     private WebElementFacade resultSelectedItem;
-    @FindBy(css = "ol  ol  ol  ol > li:nth-of-type(1) > .rct-text > label > .rct-checkbox")
+    @FindBy(css = "ol  ol  ol  ol > li:nth-of-type(1) > .rct-text > label > .rct-title")
     private WebElementFacade chBoxCheck;
 
 
@@ -46,7 +46,7 @@ public class CheckBoxPage extends PageObject {
     }
 
     public boolean chCheckBox(){
-        withTimeoutOf(5, TimeUnit.SECONDS).waitFor(By.cssSelector("ol  ol  ol  ol > li:nth-of-type(1) > .rct-text > label > .rct-checkbox"));
+        withTimeoutOf(5, TimeUnit.SECONDS).waitFor(By.cssSelector("ol  ol  ol  ol > li:nth-of-type(1) > .rct-text > label > .rct-title"));
         return chBoxCheck.isEnabled();
 
     }

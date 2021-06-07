@@ -9,8 +9,10 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class HomePage extends PageObject {
 
 
+
     @FindBy(css = "div.avatar.mx-auto.white")
     private WebElementFacade elementsButton;
+
 
 
 

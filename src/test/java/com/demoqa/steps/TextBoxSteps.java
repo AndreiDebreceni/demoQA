@@ -1,22 +1,20 @@
 package com.demoqa.steps;
 
 import net.thucydides.core.annotations.Step;
-import com.demoqa.pages.ElementsPage;
+import com.demoqa.pages.ElementsMenuPage;
 import com.demoqa.pages.HomePage;
 import com.demoqa.pages.TextBoxPage;
 import org.junit.Assert;
 
-import java.util.Locale;
-
 public class TextBoxSteps {
     private HomePage homePage;
-    private ElementsPage elementsPage;
+    private ElementsMenuPage elementsMenuPage;
     private TextBoxPage textBoxPage;
     @Step
     public void navigateToTextBox(){
         homePage.open();
         homePage.clickOnElementsButton();
-        elementsPage.clickOnTextBoxLink();
+        elementsMenuPage.clickOnTextBoxLink();
     }
     @Step
     public void submitTextBox(String UserName,String Email, String Address, String PermAddress ){

@@ -4,6 +4,7 @@ import com.demoqa.pages.ElementsMenuPage;
 import com.demoqa.pages.HomePage;
 import com.demoqa.pages.WebTablePage;
 import net.thucydides.core.annotations.Step;
+import org.junit.Assert;
 
 public class AddWebTableSteps {
     private HomePage homePage;
@@ -37,6 +38,6 @@ public class AddWebTableSteps {
     }
     @Step
     public void checkWebTableInList(String text){
-        webTablePage.isProductInList(text);
+        Assert.assertTrue(webTablePage.isElementInList(text));
     }
 }

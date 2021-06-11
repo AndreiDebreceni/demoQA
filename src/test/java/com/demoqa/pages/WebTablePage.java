@@ -25,7 +25,7 @@ public class WebTablePage extends PageObject {
     private WebElementFacade departamentField;
     @FindBy(css = "#submit")
     private WebElementFacade submitButton;
-    @FindBy(css = "div.rt-table > div.rt-tbody")
+    @FindBy(css = ".rt-tbody .rt-tr-group")
     private List<WebElementFacade> listOfWebTable;
     @FindBy(css = "div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(4) > div > div:nth-child(1)")
     private WebElementFacade firstNameinList;
@@ -55,17 +55,17 @@ public class WebTablePage extends PageObject {
         clickOn(submitButton);
     }
 
-    public boolean isProductInList(String firstName){
-        System.out.println("name: " + listOfWebTable.get(1).getText());
+    public boolean isElementInList(String elementName){
+        System.out.println("name: " + listOfWebTable.get(3).getText());
         Assert.assertNotNull(listOfWebTable);
         for (WebElementFacade element : listOfWebTable){
-            if (element.findElement(By.cssSelector("div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(4) > div > div:nth-child(1)"))
-                    .getText().equals(firstName)){
+            if (listOfWebTable.get(3).getText().equals(elementName))
                 return true;
             }
-        }
         return false;
+        }
 
-    }
+
+
 
 }

@@ -15,7 +15,12 @@ public class WebTableTest extends BaseTest {
         addWebTableSteps.insertCredentials("alex","ionescu",
                 "name@gmail.com","30","1300","it");
         addWebTableSteps.submitWebTable();
-        addWebTableSteps.checkWebTableInList("cucu");
+        addWebTableSteps.checkWebTableInList("alex\n" +
+                "ionescu\n" +
+                "30\n" +
+                "name@gmail.com\n" +
+                "1300\n" +
+                "it");
 
     }
 

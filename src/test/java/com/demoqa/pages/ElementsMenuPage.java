@@ -24,7 +24,7 @@ public class ElementsMenuPage extends PageObject {
     private WebElementFacade webTablesLink;
     @FindBy(css = "#item-4 > span")
     private WebElementFacade buttonsLink;
-    @FindBy(xpath = "/html/body/div/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[8]")
+    @FindBy(css = "#item-7 > span")
     private WebElementFacade downloadUploadLink;
 
 //just for test
@@ -48,6 +48,7 @@ public class ElementsMenuPage extends PageObject {
 
         Actions action = new Actions(getDriver());
         action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        waitABit(3000);
         clickOn(downloadUploadLink);
     }
 }

@@ -26,7 +26,7 @@ public class DownloadItemSteps {
         downloadPage.setDownloadButton();
     }
     @Step
-    public void checkIfFileIsDownloaded(){
-        Assert.assertTrue(downloadPage.isFileDownloaded("sampleFile"));
+    public void checkIfFileIsDownloaded(String fileName){
+        Assert.assertTrue(fileName.equals(downloadPage.isFileDownloaded(fileName)));
     }
 }

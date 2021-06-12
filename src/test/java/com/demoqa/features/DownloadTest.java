@@ -15,6 +15,6 @@ public class DownloadTest extends BaseTest {
         downloadItemSteps.navigateToDownloadPage();
         downloadItemSteps.clickOnDOwLink();
         downloadItemSteps.downloadFile();
-        downloadItemSteps.checkIfFileIsDownloaded();
+        downloadItemSteps.checkIfFileIsDownloaded("sampleFile.jpeg");
     }
 }

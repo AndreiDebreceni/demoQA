@@ -13,22 +13,7 @@ public class DownloadPage extends PageObject {
     public void setDownloadButton(){
         clickOn(downloadButton);
     }
-//    public Object isFileDownloaded(String fileName) {
-//        String dirPath = "C:\\Users\\dbrde\\Downloads";
-//        File dir = new File(dirPath);
-//        File[] files = dir.listFiles();
-//        Assert.assertNotNull(dir.listFiles());
-//        System.out.println("list: " +dir.listFiles());
-//        for (File listFile : files) {
-//            if(listFile.toString().contains("sampleFile.jpeg")){
-//                System.out.println("filles:   " +listFile.getName().toString());
-//                listFile.getName();
-//            }
-//        }
-//
-//
-//        return "";
-//    }
+
 
     public String isFileDownloaded(String fileName){
         String dirPath = "C:\\Users\\dbrde\\Downloads";

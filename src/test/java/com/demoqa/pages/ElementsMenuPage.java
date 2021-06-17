@@ -2,14 +2,9 @@ package com.demoqa.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.serenitybdd.screenplay.Actor;
-import net.thucydides.core.steps.ScreenplayInspector;
-import org.aspectj.apache.bcel.classfile.Module;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.server.handler.interactions.touch.Scroll;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 public class ElementsMenuPage extends PageObject {
@@ -27,7 +22,7 @@ public class ElementsMenuPage extends PageObject {
     @FindBy(css = "#item-7 > span")
     private WebElementFacade downloadUploadLink;
 
-//just for test
+
     public void clickOnTextBoxLink(){
         clickOn(textBoxLink);
     }

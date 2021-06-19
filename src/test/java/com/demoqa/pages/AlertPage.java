@@ -14,6 +14,7 @@ public class AlertPage extends PageObject {
     public void setConfirmButton(){
         clickOn(confirmButton);
         getAlert().accept();
+        
 
     }
     public String setConfirmResult(){

@@ -14,6 +14,8 @@ public class HomePage extends PageObject {
     private WebElementFacade elementsButton;
     @FindBy(css = " div:nth-child(3) > div > div.avatar.mx-auto.white > svg")
     private WebElementFacade alertsFrameWindowsButton;
+    @FindBy(css = "div:nth-of-type(4) > div > .avatar.mx-auto.white > svg")
+    private WebElementFacade widgetsButton;
 
 
 
@@ -23,6 +25,9 @@ public class HomePage extends PageObject {
     }
     public void clickOnAlertsFrameButton(){
         clickOn(alertsFrameWindowsButton);
+    }
+    public void clicOnWidgetsButton(){
+        clickOn(widgetsButton);
     }
 
 }

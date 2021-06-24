@@ -43,6 +43,7 @@ public class ElementsMenuPage extends PageObject {
 
         Actions action = new Actions(getDriver());
         action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        action.sendKeys(Keys.ENTER).perform();
         waitABit(3000);
         clickOn(downloadUploadLink);
     }

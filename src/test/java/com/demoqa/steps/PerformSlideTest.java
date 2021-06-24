@@ -22,6 +22,6 @@ public class PerformSlideTest {
     }
     @Step
     public void getSlideValue(String value){
-        Assert.assertTrue(sliderPage.hoverOverSlide().equals(value));
+        Assert.assertTrue(sliderPage.getSliderValue().equals(value));
     }
 }

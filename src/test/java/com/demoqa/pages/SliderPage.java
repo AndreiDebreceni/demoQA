@@ -12,7 +12,7 @@ public class SliderPage extends PageObject {
     Actions action = new Actions(getDriver());
     @FindBy(css = ".range-slider.range-slider--primary")
     private WebElementFacade sliderBar;
-    @FindBy(css = " .range-slider__tooltip__label")
+    @FindBy(css = "#sliderValue")
     private WebElementFacade slideValue;
 
     public void controlSlider(){
@@ -20,12 +20,14 @@ public class SliderPage extends PageObject {
         action.clickAndHold(sliderBar).dragAndDropBy(sliderBar,80,-6).release().perform();
 
     }
-    public String hoverOverSlide(){
-        WebElement element = (WebElement) getDriver();
-        action.moveToElement(sliderBar).perform();
-        waitFor(css = "")
-        return  element.findElement(By.cssSelector(" .range-slider__tooltip__label")).getText();
-
-
+//    public String hoverOverSlide(){
+//        WebElement element = (WebElement) getDriver();
+//        action.moveToElement(sliderBar).perform();
+//        waitFor(slideValue);
+//        System.out.println("slide value: " + slideValue.getValue());
+//        return  slideValue.getText();
+    public String getSliderValue(){
+        System.out.println("Slider value: " + slideValue.getValue());
+         return slideValue.getValue();
     }
 }

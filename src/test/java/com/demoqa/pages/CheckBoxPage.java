@@ -7,6 +7,7 @@ import net.thucydides.core.annotations.locators.WaitForWebElements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class CheckBoxPage extends PageObject {
@@ -38,15 +39,15 @@ public class CheckBoxPage extends PageObject {
         clickOn(checkBoxReact);
     }
     public void checkResultSelectedItem(){
-        System.out.println("expected item selected: react ");
-        System.out.println("actual item selected : " + resultSelectedItem.getText());
-       Assert.assertTrue("react" , true);
+//        System.out.println("expected item selected: react ");
+//        System.out.println("actual item selected : " + resultSelectedItem.getText());
+////       Assert.assertTrue("react" , true);
        resultSelectedItem.shouldContainOnlyText("react");
 
     }
 
     public boolean chCheckBox(){
-        withTimeoutOf(5, TimeUnit.SECONDS).waitFor(By.cssSelector("ol  ol  ol  ol > li:nth-of-type(1) > .rct-text > label > .rct-title"));
+        withTimeoutOf(Duration.ofSeconds(5)).waitFor(By.cssSelector("ol  ol  ol  ol > li:nth-of-type(1) > .rct-text > label > .rct-title"));
         return chBoxCheck.isEnabled();
 
     }

@@ -16,8 +16,8 @@ public class SliderPage extends PageObject {
     private WebElementFacade slideValue;
 
     public void controlSlider(){
-        waitABit(2000);
-        action.clickAndHold(sliderBar).dragAndDropBy(sliderBar,80,-6).release().perform();
+//        waitABit(2000);
+        action.clickAndHold(sliderBar).dragAndDropBy(sliderBar,80,0).release().perform();
 
     }
 //    public String hoverOverSlide(){

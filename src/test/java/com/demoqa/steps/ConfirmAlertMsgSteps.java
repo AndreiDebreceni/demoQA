@@ -12,28 +12,21 @@ public class ConfirmAlertMsgSteps {
     private AlertPage alertPage;
 
     @Step
-    public void navigateToAlertPage(){
+    public void navigateToAlertPage() {
         homePage.open();
         homePage.clickOnAlertsFrameButton();
         alertsFrameMenuPage.clickOnAlertsButton();
     }
+
     @Step
-    public void clickAndConfirmAlertMsg(){
+    public void clickAndConfirmAlertMsg() {
         alertPage.setConfirmButton();
     }
+
     @Step
-    public void checkIfAlertIsConfirmed(String text){
+    public void checkIfAlertIsConfirmed(String text) {
         Assert.assertTrue(alertPage.setConfirmResult().equalsIgnoreCase(text));
     }
-
-
-
-
-
-
-
-
-
 
 
 }

@@ -40,7 +40,7 @@ public class DatePickerPage extends PageObject {
     }
     public String validateDateAndHour(){
         System.out.println("date and time : " + dateTimebox.getValue());
-         return dateAndTimeBox.getValue().toString();
+         return dateAndTimeBox.getValue();
 
     }
 

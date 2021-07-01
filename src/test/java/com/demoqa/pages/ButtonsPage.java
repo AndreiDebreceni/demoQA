@@ -13,7 +13,8 @@ public class ButtonsPage extends PageObject {
     public void setRightClickButton() {
         withAction().contextClick(rightClickButton).perform();
     }
-    public String checkRightClick(){
+
+    public String checkRightClick() {
         return rightClickMessage.getText();
     }
 }

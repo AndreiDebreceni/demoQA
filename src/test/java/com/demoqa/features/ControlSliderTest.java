@@ -9,7 +9,7 @@ public class ControlSliderTest extends BaseTest {
     @Steps
     private PerformSlideTest performSlideTest;
     @Test
-    public void slideBar(){
+    public void verifySlideBarValueIsSavedTest(){
         performSlideTest.navigateToSliderPage();
         performSlideTest.moveSlideBar();
         performSlideTest.getSlideValue("66");

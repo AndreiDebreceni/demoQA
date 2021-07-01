@@ -3,6 +3,7 @@ package com.demoqa.steps;
 import com.demoqa.pages.ElementsMenuPage;
 import com.demoqa.pages.HomePage;
 import com.demoqa.pages.WebTablePage;
+import com.demoqa.utils.models.Person;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
@@ -21,14 +22,20 @@ public class AddWebTableSteps {
     public void addNewWebTable() {
         webTablePage.addNewTable();
     }
+
+   @Step
+   public void setPersonData(){
+
+   }
+
     @Step
-    public void insertCredentials(String name,String lastName,String email,String age,String salary,String departament) {
-        webTablePage.setFirstNameField(name);
-        webTablePage.setLastNameField(lastName);
-        webTablePage.setUserEmail(email);
-        webTablePage.setAgeField(age);
-        webTablePage.setSalaryField(salary);
-        webTablePage.setDepartamentField(departament);
+    public void insertCredentials(Person person) {
+        webTablePage.setFirstNameField(person.getFirstName());
+        webTablePage.setLastNameField(person.getLastName());
+        webTablePage.setUserEmail(person.getEmail());
+        webTablePage.setAgeField(person.getAge());
+        webTablePage.setSalaryField(person.getSalary());
+        webTablePage.setDepartamentField(person.getDepartment());
     }
     @Step
     public void submitWebTable(){
@@ -40,4 +47,13 @@ public class AddWebTableSteps {
     public void checkWebTableInList(String text){
         Assert.assertTrue(webTablePage.isElementInList(text));
     }
+
+    @Step
+    public void verifyPersonDetails(Person expectedPerson){
+        Assert.assertEquals(expectedPerson.toString(), webTablePage.getDetailsFromPage().toString());
+
+    }
+
+
 }
+

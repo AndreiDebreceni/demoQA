@@ -2,25 +2,36 @@ package com.demoqa.features;
 
 import com.demoqa.steps.AddWebTableSteps;
 import com.demoqa.utils.BaseTest;
+import com.demoqa.utils.models.Person;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Before;
 import org.junit.Test;
 
 public class WebTableTest extends BaseTest {
     @Steps
     private AddWebTableSteps addWebTableSteps;
+
+
+    private Person person = new Person();
+    @Before
+    public void initPerson(){
+        person.setFirstName("asdasdasd");
+        person.setLastName("");
+        person.setDepartment("");
+        person.setAge("1");
+        person.setEmail("");
+        person.setSalary("");
+    }
+
     @Test
     public void addNewWebTable(){
         addWebTableSteps.navigateToWebElementPage();
         addWebTableSteps.addNewWebTable();
-        addWebTableSteps.insertCredentials("alex","ionescu",
-                "name@gmail.com","30","1300","it");
+
+        addWebTableSteps.insertCredentials(person);
         addWebTableSteps.submitWebTable();
-        addWebTableSteps.checkWebTableInList("alex\n" +
-                "ionescu\n" +
-                "30\n" +
-                "name@gmail.com\n" +
-                "1300\n" +
-                "it");
+
+        addWebTableSteps.verifyPersonDetails(person);
 
     }
 
